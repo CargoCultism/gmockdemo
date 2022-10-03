@@ -1,0 +1,1 @@
+target_sources(DemoExecutable PRIVATE ConnectionManager.cpp EthNetworkConnection.cpp)
