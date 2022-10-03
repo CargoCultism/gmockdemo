@@ -1,0 +1,39 @@
+@startuml
+
+interface INetworkSource{
+- ConnectionState state
++ string identifier
++ {abstract} void open()
++ {abstract} void transferData(char*, unsigned int)
++ {abstract} void close()
+}
+
+enum ConnectionState{
+    Undefined
+    Open
+    Transferring
+    Closed
+}
+
+class EthNetworkConnection
+{
+}
+
+class CarrierPidgeon
+{
+
+}
+
+class AfricanSwallow
+
+INetworkSource *- ConnectionState 
+
+EthNetworkConnection --|> INetworkSource 
+
+class ConnectionManager{
+    - vector<INetworkSource> networkSources
+    + addSource(INetworkSource)
+    + sendData(char*,unsigned int)
+}
+
+@enduml

@@ -5,6 +5,13 @@
 namespace gmockdemo
 {
 namespace network{
+    enum class ConnectionState
+    {
+        undefined,
+        open,
+        transferring,
+        closed
+    };
     class INetworkSource
     {
     public:
